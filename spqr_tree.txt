@@ -1,0 +1,42 @@
+https://sagecell.sagemath.org/
+
+from sage.graphs.connectivity import spqr_tree
+H = Graph({"Albania": ["Greece","North Macedonia","Montenegro","Serbia"], 
+           "Armenia": ["Azerbaijan","Georgia","Turkey"], 
+           "Austria": ["Czech Republic","Germany","Hungary","Italy","Liechtenstein","Slovakia","Slovenia","Switzerland"],
+           "Azerbaijan": ["Armenia","Georgia","Russia"],
+           "Belarus": ["Latvia","Lithuania","Poland","Russia","Ukraine"],
+           "Belgium": ["France","Germany","Luxembourg","Netherlands"],
+           "Bosnia and Herzegovina": ["Croatia","Montenegro","Serbia"],
+           "Bulgaria": ["Greece","North Macedonia","Romania","Serbia","Turkey"],
+           "Croatia": ["Bosnia and Herzegovina","Hungary","Montenegro","Serbia","Slovenia"],
+           "Czech Republic": ["Austria","Germany","Poland","Slovakia"],
+           "Estonia": ["Latvia","Russia"],
+           "France": ["Belgium","Germany","Italy","Luxembourg","Switzerland"],
+           "Georgia": ["Armenia","Azerbaijan","Russia","Turkey"],
+           "Germany": ["Austria","Belgium","Czech Republic","France","Luxembourg","Netherlands","Poland","Switzerland"],
+           "Greece": ["Albania","Bulgaria","Turkey","North Macedonia"],
+           "Hungary": ["Austria","Croatia","Romania","Serbia","Slovakia","Slovenia","Ukraine"],
+           "Italy": ["Austria","France","Slovenia","Switzerland"],
+           "Latvia": ["Belarus","Estonia","Lithuania","Russia"],
+           "Liechtenstein": ["Austria","Switzerland"],
+           "Lithuania": ["Belarus","Latvia","Poland","Russia"],
+           "Luxembourg": ["Belgium","France","Germany"],
+           "Moldova": ["Romania","Ukraine"],
+           "Montenegro": ["Albania","Bosnia and Herzegovina","Croatia","Serbia"],
+           "Netherlands": ["Belgium","Germany"],
+           "North Macedonia": ["Albania","Bulgaria","Greece","Serbia"],
+           "Poland": ["Belarus","Czech Republic","Germany","Lithuania","Russia","Slovakia","Ukraine"],
+           "Romania": ["Bulgaria","Hungary","Moldova","Serbia","Ukraine"],
+           "Russia": ["Azerbaijan","Belarus","Estonia","Georgia","Latvia","Lithuania","Poland","Ukraine"],
+           "Serbia": ["Bosnia and Herzegovina","Bulgaria","Croatia","Hungary","North Macedonia","Montenegro","Romania","Albania"],
+           "Slovakia": ["Austria","Czech Republic","Hungary","Poland","Ukraine"],
+           "Slovenia": ["Austria","Croatia","Italy","Hungary"],
+           "Switzerland": ["Austria","France","Italy","Liechtenstein","Germany"],
+           "Turkey": ["Armenia","Bulgaria","Georgia","Greece"],
+           "Ukraine": ["Belarus","Hungary","Moldova","Poland","Romania","Russia","Slovakia"]})
+
+
+H = H.to_undirected()
+tree = spqr_tree(H)
+plot(tree)
